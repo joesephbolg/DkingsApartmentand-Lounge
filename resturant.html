@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DKings Restaurant - Order Online</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f6fc;
+      margin: 0;
+      padding: 0;
+      color: #222;
+      overflow-x: hidden;
+    }
+    header {
+      background: #001f4d;
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      animation: fadeInDown 1s ease-out;
+    }
+    h2 {
+      color: #001f4d;
+      border-bottom: 2px solid #001f4d;
+      padding-bottom: 8px;
+      margin: 40px 0 20px;
+      text-align: center;
+    }
+    .menu-section {
+      margin: 0 auto 30px;
+      max-width: 900px;
+      animation: fadeIn 1.2s ease-in;
+    }
+    ul.dishes {
+      list-style: none;
+      padding: 0;
+    }
+    ul.dishes li {
+      background: #e0ecff;
+      margin: 10px 0;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.08);
+      font-size: 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: zoomIn 0.5s ease;
+    }
+    .price {
+      margin-left: 15px;
+      font-weight: bold;
+      color: #004080;
+    }
+    .add-to-cart {
+      background: #001f4d;
+      color: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: background 0.3s ease;
+    }
+    .add-to-cart:hover {
+      background: #000a1f;
+    }
+    .cart {
+      max-width: 900px;
+      margin: 20px auto;
+      background: #dce9ff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .cart h3 {
+      color: #001f4d;
+      margin-bottom: 10px;
+    }
+    .cart ul {
+      padding-left: 20px;
+    }
+    form {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #e0ecff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,128,0.3);
+      animation: zoomIn 1s ease;
+    }
+    form h3 {
+      color: #001f4d;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1.5px solid #001f4d;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+    button[type="submit"] {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px;
+      background: #001f4d;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button[type="submit"]:hover {
+      background: #000a1f;
+    }
+    .whatsapp-btn {
+      display: block;
+      width: 90%;
+      margin: 30px auto;
+      padding: 15px;
+      background: #25D366;
+      color: white;
+      text-align: center;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebf5f;
+    }
+    footer {
+      text-align: center;
+      color: #666;
+      padding: 30px 0;
+      background: #f2f6fc;
+      border-top: 1px solid #ccc;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    @keyframes zoomIn {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  DKings Restaurant - Order Online
+</header>
+
+<section class="menu-section" id="intercontinental">
+  <h2>Intercontinental Dishes</h2>
+  <ul class="dishes">
+    <li>Grilled Salmon with Lemon Butter <span class="price">₦4500</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Beef Steak with Mushroom Sauce <span class="price">₦5000</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Spaghetti Carbonara <span class="price">₦3000</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Caesar Salad <span class="price">₦2500</span> <button class="add-to-cart">Add to Cart</button></li>
+  </ul>
+</section>
+
+<section class="menu-section" id="nigerian">
+  <h2>Nigerian Dishes</h2>
+  <ul class="dishes">
+    <li>Jollof Rice with Chicken <span class="price">₦2000</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Egusi Soup with Pounded Yam <span class="price">₦1800</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Suya (Spicy Grilled Meat) <span class="price">₦2200</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Ofada Rice with Ayamase Sauce <span class="price">₦2500</span> <button class="add-to-cart">Add to Cart</button></li>
+  </ul>
+</section>
+
+<section class="menu-section" id="chinese">
+  <h2>Chinese Dishes</h2>
+  <ul class="dishes">
+    <li>Fried Rice with Spring Rolls <span class="price">₦2700</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Kung Pao Chicken <span class="price">₦3200</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Sweet and Sour Pork <span class="price">₦3400</span> <button class="add-to-cart">Add to Cart</button></li>
+    <li>Vegetable Chow Mein <span class="price">₦2900</span> <button class="add-to-cart">Add to Cart</button></li>
+  </ul>
+</section>
+
+<div class="cart">
+  <h3>Your Cart</h3>
+  <ul id="cart-list"></ul>
+</div>
+
+<a class="whatsapp-btn" id="whatsapp-order" href="9036485759" target="_blank">Order on WhatsApp</a>
+
+<section id="order-form">
+  <form action="https://formspree.io/f/mjvnkkyd" method="POST">
+    <h3>Place Your Order</h3>
+    <label for="name">Full Name*</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Email Address*</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="phone">Phone Number*</label>
+    <input type="text" id="phone" name="phone" required />
+
+    <label for="address">Delivery Address*</label>
+    <textarea id="address" name="address" rows="3" placeholder="Enter your delivery address" required></textarea>
+
+    <button type="submit">Submit Order</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 DKings Restaurant. All rights reserved.
+</footer>
+
+<script>
+  const cart = [];
+  const cartList = document.getElementById('cart-list');
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement.textContent.replace('Add to Cart', '').trim();
+      cart.push(item);
+      updateCart();
+    });
+  });
+
+  function updateCart() {
+    cartList.innerHTML = '';
+    cart.forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      cartList.appendChild(li);
+    });
+
+    const message = encodeURIComponent('Hello, I want to order: ' + cart.join(', '));
+    document.getElementById('whatsapp-order').href = `https://9036485759text=${message}`;
+  }
+</script>
+
+</body>
+</html>
